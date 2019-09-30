@@ -1,5 +1,7 @@
 package Program;
 import java.util.*;
+
+import gui_fields.GUI_Player;
 import gui_main.GUI;
 public class Terningespil {
 
@@ -12,6 +14,7 @@ public class Terningespil {
         Player p1 = new Player();
         Player p2 = new Player();
         GUI gui = new GUI();
+        //gui.addPlayer("Peter",100);
 
 
         //Opretter variable
@@ -19,18 +22,34 @@ public class Terningespil {
         final int POINTLIMIT = 40;
         int runde = 1;
 
+        //Siger velkomnen
+        gui.showMessage("Velkommen. ");
+
         // Selve terningespillet kører så længe while-loopet kører.
         while(true){
 
             //Terningerne rulles
             die1.roll();
             die2.roll();
+            gui.setDice(die1.getFaceValue(),die2.getFaceValue());
+            if (counter%2==1) {
+                gui.showMessage("Runde " + runde +"\nDet er spiller 1's tur \nSpiller 1: "+ p1.getPoint() +"\nSpiller 2: " +p2.getPoint()+ "\n\nTryk OK for at kaste ");
+
+            } else {
+                gui.showMessage("Runde " + runde +"\nDet er spiller 2's tur \nSpiller 1: "+ p1.getPoint() +"\nSpiller 2: " +p2.getPoint()+ "\n\nTryk OK for at kaste ");
+
+            }
+
+
+
 
             //Enten p1's tur eller p2's
             if (counter%2==1) { //Det er spiller 1's tur
 
                 if(p1.getPoint() >= POINTLIMIT && die1.getFaceValue()== die2.getFaceValue()){
-                    System.out.println("Spiller 1 har vundet");
+                    gui.showMessage("Spiller 1 har vundet ved dobbeltslag efter 40 point. \nSpiller 1 sluttede med "+
+                            p1.getPoint() + " point og Spiller 2 med " + p2.getPoint()+ " point.");
+                    //System.out.println("Spiller 1 har vundet");
                     break;
                 }
 
@@ -44,8 +63,9 @@ public class Terningespil {
                 //To seksere
                 if (die1.getFaceValue()==6 && die2.getFaceValue()==6) {
                     if (p1.getToSeksereSidst()) {
-
-                        System.out.println("Spiller 1 har vundet"); //SKAL SLETTES SENERE
+                        gui.showMessage("Spiller 1 vandt med 2 seksere 2 gange i streg. Spiller 1 sluttede med " +
+                                p1.getPoint() + " point og Spiller 2 med " + p2.getPoint()+ " point.");
+                        //System.out.println("Spiller 1 har vundet"); //SKAL SLETTES SENERE
                         break;
                     } else {
                         p1.setToSeksereSidst(true);
@@ -58,7 +78,8 @@ public class Terningespil {
 
                 //Tjek om man har vundet
                 if(p1.getPoint() >= POINTLIMIT && die1.getFaceValue()== die2.getFaceValue()){
-                    System.out.println("Spiller 2 har vundet");
+                    gui.showMessage("Spiller 2 har vundet ved dobbeltslag efter 40 point. Spiller 2 sluttede med " +
+                            p2.getPoint() + " point og Spiller 1 med " + p1.getPoint()+ " point.");
                     break;
                 }
 
@@ -72,8 +93,8 @@ public class Terningespil {
                 //To seksere
                 if (die1.getFaceValue()==6 && die2.getFaceValue()==6) {
                     if (p2.getToSeksereSidst()) {
-
-                        System.out.println("Spiller 2 har vundet"); //SKAL SLETTES SENERE
+                        gui.showMessage("Spiller 2 vandt med 2 seksere 2 gange i streg. Spiller 2 sluttede med " +
+                                p2.getPoint() + " point og  Spiller 1 med " + p1.getPoint()+ " point.");
                         break;
                     } else {
                         p2.setToSeksereSidst(true);
