@@ -15,15 +15,15 @@ public class Die {
         faceValue = Ran.nextInt(sideNummer) + 1;
     }
 
-    private int getFaceValue(){
+    pub int getFaceValue(){
         return faceValue;
     }
 
-    private void setFaceValue(int y){
+    public void setFaceValue(int y){
         faceValue = y;
     }
 
-    private String toString(){
+    public String toString(){
         return Integer.toString(faceValue);
     }
 
