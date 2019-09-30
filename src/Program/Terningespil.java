@@ -14,8 +14,12 @@ public class Terningespil {
         Player p1 = new Player();
         Player p2 = new Player();
         GUI gui = new GUI();
-        //gui.addPlayer("Peter",100);
-
+        GUI_Player player1 = new GUI_Player("Spiller 1");
+        GUI_Player player2 = new GUI_Player("Spiller 2");
+        gui.addPlayer(player1);
+        gui.addPlayer(player2);
+        //player1.setBalance(0);
+        //player2.setBalance(0);
 
         //Opretter variable
         int counter = 1; //Angiver om det spiller 1(ved lige) eller spiller 2(ved lige)
