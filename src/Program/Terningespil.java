@@ -14,10 +14,10 @@ public class Terningespil {
         Player p1 = new Player();
         Player p2 = new Player();
         GUI gui = new GUI();
-        GUI_Player player1 = new GUI_Player("Spiller 1");
-        GUI_Player player2 = new GUI_Player("Spiller 2");
-        gui.addPlayer(player1);
-        gui.addPlayer(player2);
+        //GUI_Player player1 = new GUI_Player("Spiller 1");
+        //GUI_Player player2 = new GUI_Player("Spiller 2");
+        //gui.addPlayer(player1);
+        //gui.addPlayer(player2);
         //player1.setBalance(0);
         //player2.setBalance(0);
 
