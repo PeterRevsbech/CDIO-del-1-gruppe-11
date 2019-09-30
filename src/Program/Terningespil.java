@@ -1,6 +1,6 @@
-
 package Program;
 import java.util.*;
+import gui_main.GUI;
 public class Terningespil {
 
     public static void main(String[] args) {
@@ -11,6 +11,8 @@ public class Terningespil {
         Die die2 = new Die(6);
         Player p1 = new Player();
         Player p2 = new Player();
+        GUI gui = new GUI();
+
 
         //Opretter variable
         int counter = 1; //Angiver om det spiller 1(ved lige) eller spiller 2(ved lige)
