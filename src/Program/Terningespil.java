@@ -13,12 +13,6 @@ public class Terningespil {
         Player p1 = new Player();
         Player p2 = new Player();
         GUI gui = new GUI();
-        //GUI_Player player1 = new GUI_Player("Spiller 1");
-        //GUI_Player player2 = new GUI_Player("Spiller 2");
-        //gui.addPlayer(player1);
-        //gui.addPlayer(player2);
-        //player1.setBalance(0);
-        //player2.setBalance(0);
         String  navn1 = gui.getUserString("Venligst indtast navnet på første spiller");
         String navn2 = gui.getUserString("Venligst indtast navnet på anden spiller");
         p1.setPlayerNavn(navn1);
@@ -55,8 +49,8 @@ public class Terningespil {
             if (counter%2==1) { //Det er spiller 1's tur
 
                 if(p1.getPoint() >= POINTLIMIT && die1.getFaceValue()== die2.getFaceValue()){
-                    gui.showMessage("Spiller 1 har vundet ved dobbeltslag efter 40 point. \nSpiller 1 sluttede med "+
-                            p1.getPoint() + " point og Spiller 2 med " + p2.getPoint()+ " point.");
+                    gui.showMessage(p1.getPlayerNavn() + " har vundet ved dobbeltslag efter 40 point. " +p1.getPlayerNavn() + " sluttede med "+
+                            p1.getPoint() + " point og "+ p2.getPlayerNavn()+" med " + p2.getPoint()+ " point.");
                     //System.out.println("Spiller 1 har vundet");
                     break;
                 }
@@ -71,7 +65,7 @@ public class Terningespil {
                 //To seksere
                 if (die1.getFaceValue()==6 && die2.getFaceValue()==6) {
                     if (p1.getToSeksereSidst()) {
-                        gui.showMessage("Spiller 1 vandt med 2 seksere 2 gange i streg. Spiller 1 sluttede med " +
+                        gui.showMessage(p1.getPlayerNavn() + " vandt med 2 seksere 2 gange i streg. Spiller 1 sluttede med " +
                                 p1.getPoint() + " point og Spiller 2 med " + p2.getPoint()+ " point.");
                         //System.out.println("Spiller 1 har vundet"); //SKAL SLETTES SENERE
                         break;
@@ -85,9 +79,9 @@ public class Terningespil {
             } else { //Det er spiller 2's tur
 
                 //Tjek om man har vundet
-                if(p1.getPoint() >= POINTLIMIT && die1.getFaceValue()== die2.getFaceValue()){
-                    gui.showMessage("Spiller 2 har vundet ved dobbeltslag efter 40 point. Spiller 2 sluttede med " +
-                            p2.getPoint() + " point og Spiller 1 med " + p1.getPoint()+ " point.");
+                if(p2.getPoint() >= POINTLIMIT && die1.getFaceValue()== die2.getFaceValue()){
+                    gui.showMessage(p2.getPlayerNavn() + " har vundet ved dobbeltslag efter 40 point. " +p1.getPlayerNavn() + " sluttede med "+
+                            p1.getPoint() + " point og "+ p2.getPlayerNavn()+" med " + p2.getPoint()+ " point.");
                     break;
                 }
 
@@ -101,7 +95,7 @@ public class Terningespil {
                 //To seksere
                 if (die1.getFaceValue()==6 && die2.getFaceValue()==6) {
                     if (p2.getToSeksereSidst()) {
-                        gui.showMessage("Spiller 2 vandt med 2 seksere 2 gange i streg. Spiller 2 sluttede med " +
+                        gui.showMessage(p2.getPlayerNavn()+" vandt med 2 seksere 2 gange i streg. Spiller 2 sluttede med " +
                                 p2.getPoint() + " point og  Spiller 1 med " + p1.getPoint()+ " point.");
                         break;
                     } else {
