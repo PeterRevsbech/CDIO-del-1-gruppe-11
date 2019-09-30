@@ -6,6 +6,8 @@ public class Die {
     private int sideNummer = 6;
     private int faceValue = 1;
 
+
+    //konstruktør
     public void Die(int x) {
         sideNummer = x;
     }
@@ -15,7 +17,7 @@ public class Die {
         faceValue = Ran.nextInt(sideNummer) + 1;
     }
 
-    pub int getFaceValue(){
+    public int getFaceValue(){
         return faceValue;
     }
 
