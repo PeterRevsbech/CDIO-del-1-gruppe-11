@@ -6,11 +6,10 @@ public class Die {
     private int sideNummer = 6;
     private int faceValue = 1;
 
-
-    //konstruktør
-    public void Die(int x) {
-        sideNummer = x;
+    public Die(int i) {
+        sideNummer = i;
     }
+
 
     public void roll(){
         Random Ran = new Random();

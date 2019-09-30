@@ -4,6 +4,7 @@ public class Player {
 
     private int point = 0;
     private String PlayerNavn = "Ukendt";
+    private boolean toSeksereSidst = false;
 
     //konstruktør
     public void Player(String navn){
@@ -11,12 +12,20 @@ public class Player {
 
     }
 
-    public void givPoint(int x){
-        point = x + point;
+    public void setPoint(int x){
+        point = x;
     }
 
     public int getPoint(){
         return point;
+    }
+
+    public void setToSeksereSidst(boolean X) {
+        toSeksereSidst = X;
+    }
+
+    public boolean getToSeksereSidst() {
+        return toSeksereSidst;
     }
 
 
