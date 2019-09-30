@@ -28,6 +28,13 @@ public class Player {
         return toSeksereSidst;
     }
 
+    public void setPlayerNavn(String navn) {
+        PlayerNavn = navn;
+    }
+    public String getPlayerNavn() {
+        return PlayerNavn;
+    }
+
 
 
 

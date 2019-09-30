@@ -1,6 +1,5 @@
 package Program;
 import java.util.*;
-
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 public class Terningespil {
@@ -20,6 +19,11 @@ public class Terningespil {
         //gui.addPlayer(player2);
         //player1.setBalance(0);
         //player2.setBalance(0);
+        String  navn1 = gui.getUserString("Venligst indtast navnet på første spiller");
+        String navn2 = gui.getUserString("Venligst indtast navnet på anden spiller");
+        p1.setPlayerNavn(navn1);
+        p2.setPlayerNavn(navn2);
+
 
         //Opretter variable
         int counter = 1; //Angiver om det spiller 1(ved lige) eller spiller 2(ved lige)
@@ -27,7 +31,7 @@ public class Terningespil {
         int runde = 1;
 
         //Siger velkomnen
-        gui.showMessage("Velkommen. ");
+        gui.showMessage("Velkommen " + p1.getPlayerNavn() + " og " + p2.getPlayerNavn() );
 
         // Selve terningespillet kører så længe while-loopet kører.
         while(true){
@@ -37,10 +41,10 @@ public class Terningespil {
             die2.roll();
             gui.setDice(die1.getFaceValue(),die2.getFaceValue());
             if (counter%2==1) {
-                gui.showMessage("Runde " + runde +"\nDet er spiller 1's tur \nSpiller 1: "+ p1.getPoint() +"\nSpiller 2: " +p2.getPoint()+ "\n\nTryk OK for at kaste ");
+                gui.showMessage("Runde " + runde +"\nDet er " + p1.getPlayerNavn() +  "s tur \n" + p1.getPlayerNavn() +": "+ p1.getPoint() +"\n" +p2.getPlayerNavn()+": "  +p2.getPoint()+ "\n\nTryk OK for at kaste ");
 
             } else {
-                gui.showMessage("Runde " + runde +"\nDet er spiller 2's tur \nSpiller 1: "+ p1.getPoint() +"\nSpiller 2: " +p2.getPoint()+ "\n\nTryk OK for at kaste ");
+                gui.showMessage("Runde " + runde +"\nDet er " + p2.getPlayerNavn() +  "s tur \n" + p1.getPlayerNavn() +": "+ p1.getPoint() +"\n" +p2.getPlayerNavn()+": "  +p2.getPoint()+ "\n\nTryk OK for at kaste ");
 
             }
 
