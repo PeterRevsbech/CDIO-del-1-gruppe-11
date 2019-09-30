@@ -12,20 +12,17 @@ public class Terningespil {
         Player p1 = new Player();
         Player p2 = new Player();
 
-
-
         //Opretter variable
         int counter = 1; //Angiver om det spiller 1(ved lige) eller spiller 2(ved lige)
         final int POINTLIMIT = 40;
         int runde = 1;
 
-        //
+        // Selve terningespillet kører så længe while-loopet kører.
         while(true){
 
             //Terningerne rulles
             die1.roll();
             die2.roll();
-
 
             //Enten p1's tur eller p2's
             if (counter%2==1) { //Det er spiller 1's tur
@@ -34,7 +31,6 @@ public class Terningespil {
                     System.out.println("Spiller 1 har vundet");
                     break;
                 }
-
 
                 //Pointgivning
                 p1.setPoint(p1.getPoint() + getSum(die1.getFaceValue(),die2.getFaceValue()));
@@ -55,10 +51,6 @@ public class Terningespil {
                     } else {
                     p1.setToSeksereSidst(false);
                 }
-
-
-
-
 
             } else { //Det er spiller 2's tur
 
@@ -90,30 +82,12 @@ public class Terningespil {
                 }
 
              //Håndtering af ture og omslag
-
-
              if (die1.getFaceValue()!=die2.getFaceValue()) {
                  counter++;
                  runde = runde + counter%2;
-
-
-
-
-
-
              }
-
-
-
             }
-
-
-
-
-
         }
-
-
 
     public static int getSum(int x1, int x2){
         return x1+x2;
@@ -122,10 +96,4 @@ public class Terningespil {
     public static boolean getEns(int x1, int x2){
         return x1 == x2;
     }
-
-    //public void rollDice(Player spiller){
-    //    die1.roll();
-    //    die2.roll();
-    //    spiller.givPoint(getSum(die1.faceValue,die2.faceValue));
-    //}
 }
