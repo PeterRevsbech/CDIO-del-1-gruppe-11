@@ -17,6 +17,7 @@ public class DieTest {
         int n10 =0;
         int n11 =0;
         int n12 =0;
+        int toEns = 0;
         int sum =0;
 
         for (int i= 1; i<1000; i++){
@@ -71,6 +72,9 @@ public class DieTest {
 
 
             }
+            if(die1.getFaceValue() == die2.getFaceValue()){
+                toEns++;
+            }
 
         }
         System.out.println(""+n2);
@@ -84,7 +88,7 @@ public class DieTest {
         System.out.println(""+n10);
         System.out.println(""+n11);
         System.out.println(""+n12);
-
+        System.out.println("to ens"+toEns);
 
 
     }
