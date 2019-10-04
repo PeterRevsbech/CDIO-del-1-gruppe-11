@@ -113,12 +113,9 @@ public class Terningespil {
              }
             }
         }
-
+        //Hjælpefunktion til at se summen af terningerne.
     public static int getSum(int x1, int x2){
         return x1+x2;
     }
 
-    public static boolean getEns(int x1, int x2){
-        return x1 == x2;
-    }
 }
