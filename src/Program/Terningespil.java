@@ -33,7 +33,7 @@ public class Terningespil {
             //Terningerne rulles
             die1.roll();
             die2.roll();
-            gui.setDice(die1.getFaceValue(),die2.getFaceValue());
+
             if (counter%2==1) {
                 gui.showMessage("Runde " + runde +"\nDet er " + p1.getPlayerNavn() +  "s tur \n" + p1.getPlayerNavn() +"s point: "+ p1.getPoint() +"\n" +p2.getPlayerNavn()+"s point: "  +p2.getPoint()+ "\n\nTryk OK for at kaste ");
 
@@ -41,6 +41,7 @@ public class Terningespil {
                 gui.showMessage("Runde " + runde +"\nDet er " + p2.getPlayerNavn() +  "s tur \n" + p1.getPlayerNavn() +"s point: "+ p1.getPoint() +"\n" +p2.getPlayerNavn()+"s point: "  +p2.getPoint()+ "\n\nTryk OK for at kaste ");
 
             }
+            gui.setDice(die1.getFaceValue(),die2.getFaceValue());
 
 
 
