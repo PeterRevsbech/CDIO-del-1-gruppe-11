@@ -119,3 +119,4 @@ public class Terningespil {
     }
 
 }
+ // Dette program er færdig
