@@ -92,7 +92,7 @@ public class Terningespil {
                     p2.setPoint(0);
                 }
 
-                //To seksere
+                //Tjekker om der er blevet slået to seksere to gange i streg. Hvis det er sket stopper den spillet og skriver hvilken player der har vundet.
                 if (die1.getFaceValue()==6 && die2.getFaceValue()==6) {
                     if (p2.getToSeksereSidst()) {
                         gui.showMessage(p2.getPlayerNavn()+" vandt med 2 seksere 2 gange i streg. Spiller 2 sluttede med " +
